@@ -1,0 +1,77 @@
+
+========================================
+Brandon's Linux Tower Project
+Deployment Cheat Sheet
+========================================
+
+Built with Caelum, April 2025
+
+This sheet covers how to deploy either:
+- The Headless Server Setup (no desktop)
+- The Full Desktop + Server Setup
+
+Both packages are designed for easy deployment, automation, and self-hosting.
+
+--------------------------------------------------
+PACKAGE 1: Server-Only (Headless)
+File: master_setup_package_updated.zip
+
+Purpose:
+- Ubuntu Server optimized setup without GUI
+- RAM auto-cleaning, CPU tuning, SSD TRIM, Netdata live dashboard
+- Ideal for servers, towers, 24/7 devices
+
+How to Deploy:
+1. Transfer 'master_setup_package_updated.zip' to your target machine.
+2. Unzip:
+   unzip master_setup_package_updated.zip
+3. Enter the extracted directory:
+   cd master_setup_package
+4. Make the setup script executable:
+   chmod +x master_setup.sh
+5. Run the setup:
+   sudo ./master_setup.sh
+6. DONE! Your server is ready.
+
+Netdata Dashboard: http://YOUR-IP:19999
+-------------------------------------------
+
+PACKAGE 2: Full Desktop + Server Setup
+File: master_setup_full_gui_package.zip
+
+Purpose:
+- Full Ubuntu Server system WITH XFCE4 Desktop environment
+- GUI login screen (LightDM), Flatpak store, Flameshot, Synaptic Package Manager
+- Ideal for hybrid server/desktop machines
+
+How to Deploy:
+1. Transfer 'master_setup_full_gui_package.zip' to your target machine.
+2. Unzip:
+   unzip master_setup_full_gui_package.zip
+3. Enter the extracted directory:
+   cd master_setup_full_gui_package
+4. Make the setup script executable:
+   chmod +x master_setup_full_gui.sh
+5. Run the setup:
+   sudo ./master_setup_full_gui.sh
+6. Reboot after install:
+   sudo reboot
+7. Login through the graphical login screen (LightDM) to XFCE Desktop.
+
+Netdata Dashboard: http://YOUR-IP:19999
+-------------------------------------------
+
+GENERAL NOTES:
+
+- Always run the setup scripts as root (with sudo).
+- Allow 5–15 minutes depending on system speed and internet.
+- After installation, Netdata and all monitoring services are active.
+- Flathub app store enabled automatically (on GUI version).
+- RAM auto-cleans hourly.
+- CPU scales smartly via schedutil governor.
+- SSD/NVMe drives auto-trim weekly.
+- Security patches install automatically.
+
+--------------------------------------------------
+
+VICTORY BELONGS TO THOSE WHO BUILD IT THEMSELVES. 🛡️👑
